@@ -1,0 +1,99 @@
+.footer {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  &__top {
+    padding: 100px 0;
+    background: $black-cl;
+    &-contact {
+      grid-column: 1/4;
+      .heading {
+        @include text(2.4rem, ol, 40px, $white-cl, normal);
+        padding-bottom: 24px;
+        @include xs {
+          font-size: 2rem;
+        }
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        padding-bottom: 16px;
+        &:last-child {
+          padding-bottom: 0;
+        }
+        .info {
+          @include text(1.6rem, mr, 30px, $white-cl, normal);
+          @include xs {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+    &-info {
+      grid-column: 5/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .desc-info {
+        @include text(2.4rem, ci, 40px, $white-cl, normal);
+        text-align: center;
+        padding-top: 34px;
+        padding-bottom: 31px;
+        @include xs {
+          font-size: 1.9rem;
+          line-height: 30px;
+        }
+      }
+      .icon-info {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        @include xs {
+          padding-top: 70px;
+          a {
+            width: 30px;
+          }
+        }
+      }
+    }
+    &-open {
+      grid-column: 10/13;
+      text-align: right;
+      .heading-open {
+        @include text(2.4rem, ol, 40px, $white-cl, normal);
+      }
+      .open-time {
+        padding-top: 24px;
+        .item {
+          padding-bottom: 16px;
+          &:last-child {
+            padding-bottom: 0;
+          }
+          @include text(1.6rem, mr, 30px, $white-cl, normal);
+          span {
+            color: $secondary;
+          }
+          @include xs {
+            font-size: 1rem;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+    @include xs {
+      padding: 50px 0;
+    }
+  }
+  &__bottom {
+    padding: 24px 0;
+    background: $black-light;
+    .copy {
+      text-align: center;
+      @include text(1.6rem, mr, 30px, $white-cl, normal);
+      @include xs {
+        font-size: 1rem;
+      }
+    }
+  }
+}

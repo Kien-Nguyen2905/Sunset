@@ -1,0 +1,32 @@
+.nav {
+  height: calc(100vh - var(--height-header));
+  width: 100%;
+  position: fixed;
+  top: var(--height-header);
+  z-index: 90;
+  background: #161616;
+  @include transition(0.4s $cubic);
+  clip-path: inset(0 0 100% 0);
+  ul {
+    text-align: center;
+    @include mid;
+    li {
+      height: 100%;
+      a {
+        display: block;
+        padding-bottom: 40px;
+        @include text(2.8rem, od, 20px, $white-cl, normal);
+        letter-spacing: 0.04rem;
+        @include transition($t);
+        &:hover {
+          color: $secondary;
+          @include transition($t);
+        }
+      }
+    }
+  }
+  &.active {
+    @include transition(0.4s $cubic);
+    clip-path: inset(0 0 0 0);
+  }
+}

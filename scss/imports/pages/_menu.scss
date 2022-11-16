@@ -1,0 +1,65 @@
+.menu {
+  background: $black-light;
+  padding: 120px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 52px;
+    &-item {
+      position: relative;
+      .item-img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+          min-width: 100%;
+          min-height: 100%;
+          object-fit: cover;
+        }
+      }
+      .content {
+        @include mid;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .title {
+          @include text(7.2rem, c6, 87px, $white-cl, normal);
+          @include sm {
+            font-size: 5.5rem;
+          }
+        }
+      }
+    }
+  }
+  &__btn {
+    display: block;
+    width: max-content;
+    @include text(1.4rem, od, 20px, $white-cl, normal);
+    padding: 18px 55px;
+    background: #222d3b;
+    position: relative;
+    &::after {
+      content: "";
+      width: 170px;
+      height: 63px;
+      border: 1px solid $secondary;
+      @include mid;
+      position: absolute;
+    }
+    &:hover {
+      @include transition($t);
+      background: $secondary;
+    }
+  }
+  @include xs {
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

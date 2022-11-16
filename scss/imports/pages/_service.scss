@@ -1,0 +1,314 @@
+.carousel {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background: $black-light;
+  .center-text {
+    padding-bottom: 80px;
+  }
+  &__wrap {
+    display: inline;
+    &-item {
+      position: relative;
+      margin-left: 54px;
+      overflow: hidden;
+      img {
+        min-height: 100%;
+        object-fit: cover;
+      }
+      .title {
+        @include mid;
+        @include text(4rem, ol, 54px, $white-cl, normal);
+        cursor: pointer;
+        @include xxs {
+          font-size: 2.6rem;
+        }
+      }
+    }
+  }
+}
+.bean {
+  background: $black-light;
+  position: relative;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    @include sm {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__left {
+    grid-column: 1/6;
+    &-wrap {
+      padding-top: 48px;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 8px;
+      .item {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        .desc {
+          @include text(1.6rem, mr, 30px, $white-cl, normal);
+          @include xxs {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+  &__right {
+    grid-column: 7/13;
+    position: relative;
+    .cafe {
+      width: 100%;
+      height: 100%;
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+    }
+    .textcafe {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include mid;
+      .top {
+        padding-bottom: 68px;
+        .heading {
+          @include text(7.2rem, c6, 87px, $white-cl, normal);
+          padding-bottom: 16px;
+          @include xxs {
+            font-size: 5.5rem;
+            line-height: 70px;
+          }
+        }
+        .info {
+          @include text(2.4rem, ol, 40px, $white-cl, normal);
+        }
+      }
+      .btn-cafe {
+        background: $white-cl;
+        display: block;
+        width: max-content;
+        padding: 18px 55px;
+        @include transition($t);
+        @include text(1.4rem, od, 20px, $black-cl, normal);
+        &:hover {
+          background: $secondary;
+          color: $white-cl;
+          @include transition($t);
+        }
+      }
+    }
+  }
+  @include xxs {
+    &__right {
+      .textcafe {
+        .top {
+          padding-bottom: 40px;
+        }
+        .btn-cafe {
+          padding: 13px 45px;
+        }
+      }
+    }
+  }
+}
+.plus {
+  background-color: $black-light;
+  padding-top: 235px;
+  padding-bottom: 125px;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    @include xs {
+      gap: 18px;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .number {
+      @include text(6rem, ol, 89px, $secondary, normal);
+      @include xs {
+        font-size: 5.3rem;
+      }
+      @include xxs {
+        font-size: 3.5rem;
+      }
+    }
+    .info {
+      @include text(1.6rem, mr, 30px, $white-cl, normal);
+      text-align: center;
+      @include xxs {
+        font-size: 1rem;
+      }
+    }
+  }
+  @include sm {
+    padding: 100px 0;
+  }
+  @include xs {
+    padding: 80px 0;
+  }
+}
+.plan {
+  background: #151b20;
+  padding-bottom: 336px;
+  position: relative;
+  &__top {
+    position: relative;
+    .heading {
+      @include text(24rem, ol, 356px, #0e1317, normal);
+      text-align: center;
+    }
+    .center-text {
+      position: absolute;
+      @include mid;
+    }
+  }
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    &-item {
+      border: 1px solid $secondary;
+      .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        .heading {
+          @include text(1.6rem, mr, 30px, $white-cl, normal);
+        }
+        .prices {
+          @include text(6rem, ol, 89px, $secondary, normal);
+        }
+        .people {
+          @include text(1.6rem, mr, 30px, $secondary, normal);
+        }
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .desc {
+          @include text(2.4rem, ol, 40px, $white-cl, normal);
+        }
+      }
+    }
+    &-item:nth-child(odd) {
+      background: #0e1317;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      min-height: 556px;
+      min-width: 340px;
+      margin-top: 30px;
+    }
+    &-item:nth-child(even) {
+      background: #000000;
+      min-height: 612px;
+      min-width: 340px;
+      position: relative;
+      .left {
+        width: 100%;
+        max-width: 38px;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        position: absolute;
+        img {
+          min-width: 100%;
+          min-height: 100%;
+          object-fit: cover;
+        }
+      }
+      .right {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
+  }
+  @include md {
+    &__bottom {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    padding-bottom: 100px;
+  }
+  @include xxs {
+    &__top {
+      .heading {
+        font-size: 16rem;
+      }
+      .center-text {
+        .heading__text {
+          font-size: 3.3rem;
+        }
+      }
+    }
+  }
+}
+.chef {
+  background: $black-light;
+  padding: 394px 0 120px;
+  &__wrap {
+    display: flex;
+    gap: 33px;
+    padding: 0 60px;
+    &-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .desc {
+        @include text(2.4rem, ci, 40px, $white-cl, normal);
+        text-align: center;
+        padding-top: 30px;
+      }
+      .info {
+        @include text(1.6rem, mr, 30px, $white-cl, normal);
+        text-align: center;
+        padding: 55px 0 24px;
+      }
+    }
+    &-img {
+      width: 100%;
+      max-width: 384px;
+      height: 100%;
+      overflow: hidden;
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  @include md {
+    padding: 150px 0 100px;
+  }
+  @include sm {
+    &__wrap {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @include xxs {
+    padding: 80px 0 80px;
+  }
+}

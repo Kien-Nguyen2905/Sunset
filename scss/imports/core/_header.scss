@@ -1,0 +1,91 @@
+.header {
+  --height-header: 100px;
+  --gap-menu: 24px;
+  --gap-right: 40px;
+  position: fixed;
+  z-index: 100;
+  right: 0;
+  left: 0;
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--height-header);
+    background: $black-head;
+    .header__logo {
+    }
+    .header__menu {
+      @include mid;
+      ul {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-menu);
+        li {
+          a {
+            @include text(var(--font-14), od, 20px, $white-cl, normal);
+            @include transition($t);
+            &:hover {
+              color: $secondary;
+              @include transition($t);
+            }
+          }
+        }
+      }
+    }
+    .header__right {
+      display: flex;
+      gap: var(--gap-right);
+      align-items: center;
+      .outer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .header__lang {
+          cursor: pointer;
+          span {
+            @include text(var(--font-14), od, 20px, $white-cl, normal);
+          }
+        }
+        .header__lang-option {
+          background: $black-btn;
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          top: var(--height-header);
+          clip-path: inset(0 0 100% 0);
+          @include transition($t $cubic);
+          a {
+            @include text(var(--font-14), od, 20px, $white-cl, normal);
+            padding: 20px 30px;
+            @include transition($t);
+            &:hover {
+              @include transition($t);
+              color: $secondary;
+            }
+          }
+          &.active {
+            clip-path: inset(0 0 0 0);
+            @include transition($t $cubic);
+          }
+        }
+      }
+    }
+  }
+  @include md {
+    --gap-menu: 15px;
+    --font-14: 1.3rem;
+    --gap-right: 30px;
+  }
+  @include sm {
+    .header__menu {
+      display: none;
+    }
+  }
+  @include xxs {
+    --gap-right: 10px;
+    .header__btn {
+      padding: 10px 20px;
+    }
+  }
+}

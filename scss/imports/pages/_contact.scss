@@ -1,0 +1,40 @@
+.facts {
+  .--contact {
+    padding: 195px 0 45px;
+  }
+  .--left {
+    padding-top: 120px;
+    @include sm {
+      padding-top: 0;
+    }
+  }
+  .contact {
+    &__item {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      padding-bottom: 18px;
+      .info {
+        .title {
+          @include text(2.4rem, ol, 40px, $white-cl, normal);
+        }
+        .address {
+          @include text(1.6rem, mr, 30px, $white-cl, normal);
+        }
+      }
+    }
+  }
+  .social {
+    display: flex;
+    gap: 16px;
+  }
+  @include sm {
+    padding-bottom: 50px;
+    .--left {
+      padding-top: 0;
+    }
+    .--contact {
+      padding-top: 70px;
+    }
+  }
+}

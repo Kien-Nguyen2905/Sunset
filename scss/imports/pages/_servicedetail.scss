@@ -1,0 +1,142 @@
+.main {
+  background: $black-light;
+  padding: 120px 0 0;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    .wrap {
+      grid-column: 3/11;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__desc {
+    .heading {
+      @include text(2.4rem, ol, 40px, $white-cl, normal);
+      padding-bottom: 24px;
+    }
+    &-info {
+      @include text(1.6rem, mr, 30px, $white-cl, normal);
+      &.--bottom {
+        padding-top: 24px;
+      }
+    }
+  }
+  &__image {
+    padding: 48px 0 84px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      min-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__make {
+    width: 100%;
+    padding: 135px 0 120px;
+    @include xxs {
+      .reserve-img,
+      .make__reserve-column {
+        display: none;
+      }
+    }
+  }
+  &__info {
+    width: 100%;
+    &-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .btn {
+        display: flex;
+        gap: 4px;
+        .item-btn {
+          @include text(1.4rem, mr, 30px, $white-cl, normal);
+          display: block;
+          padding: 4px 8px;
+          background: #222d3b;
+          @include transition($t);
+          &:hover {
+            @include transition($t);
+            background: $secondary;
+          }
+        }
+      }
+    }
+    &-center {
+      margin: 43px 0;
+      width: 100%;
+      height: 0.5px;
+      background-color: $white-cl;
+    }
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      .item {
+        display: flex;
+        gap: 16px;
+        &__img-small {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          .img-small {
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+          }
+        }
+        &__info {
+          display: flex;
+          flex-direction: column;
+          min-width: 50%;
+          .title {
+            @include text(1.6rem, ol, 24px, $white-cl, normal);
+          }
+          .day {
+            @include text(1.4rem, ci, 24px, $white-cl, normal);
+          }
+          &.--left {
+            text-align: right;
+          }
+        }
+        &:last-child {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+  &__more {
+    padding: 80px 0 150px;
+    .heading {
+      @include text(2.4rem, ol, 40px, $white-cl, normal);
+      padding-bottom: 38px;
+    }
+    &-wrap {
+      display: flex;
+      gap: 24px;
+      .item {
+        flex: 1;
+        .img {
+          height: 0;
+          padding-bottom: 105.6%;
+          overflow: hidden;
+          position: relative;
+          .image {
+            @include midimg;
+          }
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .title {
+            padding-top: 15px;
+            @include text(2.4rem, ol, 40px, $white-cl, normal);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,483 @@
+.line {
+  &::before {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background: $secondary;
+    display: block;
+  }
+  &::after {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background: $secondary;
+    display: block;
+  }
+}
+.booking {
+  display: block;
+  width: max-content;
+  padding: 16px 53px;
+  background: $secondary;
+  @include text(var(--font-14), od, 20px, $white-cl, normal);
+  @include transition($t);
+  &:hover {
+    @include transition($t);
+    background: $white-cl;
+    color: $black-cl;
+  }
+}
+.btn-primary {
+  z-index: 50;
+  padding: 0 55px;
+  height: 64px;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid $secondary;
+  position: relative;
+  background: transparent;
+  @include transition($t);
+  a {
+    @include text(1.4rem, od, 20px, $white-cl, normal);
+  }
+  &::before {
+    content: "";
+    display: block;
+    height: calc(100% - 5px);
+    width: calc(100% - 5px);
+    background-color: $black-btn;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    @include transition($t);
+  }
+  &:hover {
+    &::before {
+      background: $secondary;
+      @include transition($t);
+    }
+  }
+}
+.icon__quad {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: $secondary;
+    transform: rotate(45deg);
+    &::after {
+      content: "";
+      height: 14px;
+      width: 14px;
+      border: 1px solid $secondary;
+      position: absolute;
+      right: -2px;
+      bottom: -2px;
+    }
+  }
+  &::after {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background: $secondary;
+    display: block;
+    margin-left: 4px;
+  }
+  &::before {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background: $secondary;
+    display: block;
+    margin-right: 4px;
+  }
+}
+.left-text {
+  .primary__text {
+    @include text(2.4rem, ci, 40px, $secondary, normal);
+  }
+  .heading__text {
+    margin-top: 8px;
+    @include text(4rem, ol, 54px, $white-cl, normal);
+  }
+  .icon__quad {
+    &::before {
+      display: none;
+    }
+  }
+}
+.center-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .primary__text {
+    @include text(2.4rem, ci, 40px, $secondary, normal);
+  }
+  .heading__text {
+    margin-top: 8px;
+    @include text(4rem, ol, 54px, $white-cl, normal);
+  }
+}
+.text {
+  .number {
+    @include text(9rem, ol, 30px, $secondary, normal);
+    padding-bottom: 40px;
+  }
+  .info {
+    @include text(2.4rem, ci, 40px, $white-cl, normal);
+  }
+  @include xs {
+    .number {
+      font-size: 6.5rem;
+    }
+    .info {
+      font-size: 2rem;
+    }
+  }
+}
+// card
+.item__textbox {
+  padding: 27px 32px 45px;
+  position: relative;
+  background-color: $black-cl;
+  .top {
+    display: flex;
+    align-items: center;
+    padding-bottom: 8px;
+    @include md {
+      display: flex;
+      flex-direction: column;
+    }
+    @include xs {
+      flex-direction: row;
+    }
+    .day {
+      @include text(2.4rem, ci, 40px, $secondary, normal);
+      margin-right: 8px;
+    }
+    .icon {
+      width: 4px;
+      height: 4px;
+      background: $secondary;
+      transform: rotate(45deg);
+      margin-right: 8px;
+    }
+    .res {
+      @include text(2.4rem, ci, 40px, $secondary, normal);
+    }
+  }
+  .bottom {
+    .heading {
+      @include text(2.4rem, ol, 40px, $white-cl, normal);
+      @include transition($t);
+      &::after {
+        content: "";
+        width: 134px;
+        height: 1px;
+        background: $secondary;
+        display: block;
+        position: absolute;
+        left: 0;
+        margin-top: 18px;
+      }
+      &:hover {
+        color: $secondary;
+        @include transition($t);
+      }
+      @include sm {
+        font-size: 2.1rem;
+      }
+      @include xs {
+        font-size: 2.4rem;
+      }
+    }
+  }
+}
+.item__img {
+  height: 0;
+  padding-bottom: 78%;
+  overflow: hidden;
+  position: relative;
+  img {
+    @include midimg;
+  }
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 64px;
+  @include xs {
+    flex-direction: column;
+  }
+}
+// reserve
+.make__reserve {
+  @include grid17;
+  display: flex;
+  &-column {
+    width: 67px;
+    height: 542px;
+    background-color: #151b20;
+  }
+  &-info {
+    width: 100%;
+    min-height: 100%;
+    padding: 32px;
+    background-color: $black-cl;
+    .heading {
+      @include text(2.4rem, mr, 40px, $secondary, normal);
+      text-align: center;
+    }
+    .info__form {
+      padding: 32px 0;
+    }
+    .item {
+      min-height: 38px;
+      width: 100%;
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .btn-reserve {
+      @include mid(true);
+      height: 52px;
+      width: 100%;
+      background-color: $secondary;
+      @include text(1.4rem, od, 20px, $white-cl, normal);
+      @include transition($t);
+      &:hover {
+        background: $white-cl;
+        color: $black-cl;
+        @include transition($t);
+      }
+    }
+  }
+}
+.btn__mobile {
+  cursor: pointer;
+  background: transparent;
+  display: none;
+  width: 40px;
+  height: 25px;
+  position: relative;
+  span {
+    width: 100%;
+    height: 1px;
+    background-color: $secondary;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+  &::after,
+  &::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $secondary;
+    display: block;
+    @include transition($t);
+  }
+  &::after {
+    bottom: 0;
+    position: absolute;
+  }
+  &.active {
+    span {
+      opacity: 0;
+      @include transition($t);
+    }
+    &::after {
+      transform: rotate(-45deg) translate(6px, -8px);
+      @include transition($t);
+    }
+    &::before {
+      transform: rotate(45deg) translate(9px, 11px);
+      @include transition($t);
+    }
+  }
+  @include sm {
+    display: block;
+  }
+}
+// Banner
+.banner {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  .banner__wrap {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    .banner__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .banner__title {
+      .heading {
+        top: 52.5%;
+        left: 8.8%;
+        position: absolute;
+        @include text(4rem, ol, 54px, $white-cl, normal);
+      }
+      .banner__detail {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: absolute;
+        top: 59%;
+        right: 7.8%;
+        .home {
+          @include text(1.6rem, ol, 24px, $secondary, normal);
+        }
+        .right {
+          @include text(1.6rem, ol, 24px, $white-cl, normal);
+        }
+        span {
+          width: 4px;
+          height: 4px;
+          background: $secondary;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+.icon__plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  span {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid $secondary;
+    transform: rotate(45deg);
+    position: relative;
+    &::after {
+      content: "";
+      height: calc(100% - 4px);
+      width: calc(100% - 4px);
+      background: $secondary;
+      @include mid;
+    }
+  }
+  &::after {
+    content: "";
+    width: 50%;
+    height: 1px;
+    background: $secondary;
+    display: block;
+    margin-left: 4px;
+  }
+  &::before {
+    content: "";
+    width: 50%;
+    height: 1px;
+    background: $secondary;
+    display: block;
+    margin-right: 4px;
+  }
+}
+.btt {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border: 1px solid $secondary;
+  border-radius: 50%;
+  position: fixed;
+  right: 2%;
+  top: 84%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  @include visible(0);
+  @include transition($t);
+  &.active {
+    @include visible(1);
+    @include transition($t);
+  }
+}
+.--textdetail {
+  @include text(1.6rem, mr, 30px, $white-cl, normal);
+}
+.banner {
+  &__wrap {
+    position: relative;
+  }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    bottom: 127px;
+    left: 120px;
+    position: absolute;
+    @include xs {
+      left: 15px;
+    }
+    .heading {
+      @include text(4rem, ol, 54px, $white-cl, normal);
+      padding-bottom: 16px;
+    }
+    .banner__fresh-info {
+      @include text(1.6rem, mr, 30px, $white-cl, normal);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      @include xxs {
+        font-size: 1.3rem;
+      }
+      &.--top {
+        @include text(2.4rem, ci, 40px, $white-cl, normal);
+        @include xxs {
+          font-size: 2rem;
+        }
+      }
+      .square {
+        width: 8px;
+        height: 8px;
+        background: $white-cl;
+        display: block;
+        transform: rotate(45deg);
+      }
+    }
+    &.--top {
+      &::before {
+        content: "";
+        width: 172px;
+        height: 1px;
+        background: $secondary;
+        display: block;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+// title right detail
+.title-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 24px;
+  .square {
+    width: 8px;
+    height: 8px;
+    background: $secondary;
+    transform: rotate(45deg);
+    display: block;
+  }
+  .heading {
+    @include text(1.6rem, ol, 24px, $secondary, normal);
+  }
+}

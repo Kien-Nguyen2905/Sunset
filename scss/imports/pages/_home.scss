@@ -1,0 +1,532 @@
+.slider {
+  height: 100vh;
+  min-height: 800px;
+  position: relative;
+  .slider__wrap-main {
+    height: 100%;
+  }
+  .slider__wrap {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    &-item {
+      width: 100%;
+      top: 19%;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .slider__logo {
+        display: block;
+        margin-bottom: 31px;
+      }
+      .slider__heading {
+        @include text(var(--h1-fs), c6, 155px, $white-cl, normal);
+        @include md {
+          --h1-fs: 11rem;
+        }
+        @include sm {
+          --h1-fs: 9rem;
+        }
+        @include xs {
+          --h1-fs: 6.5rem;
+        }
+        @include xxs {
+          --h1-fs: 4rem;
+        }
+      }
+      .slider__desc {
+        @include text(4rem, ol, 54px, $white-cl, normal);
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+        @include xs {
+          font-size: 2rem;
+        }
+      }
+    }
+    .slider__banner {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .slider-btn {
+    width: 80px;
+    border-bottom: 40px solid transparent;
+    border-top: 40px solid transparent;
+    border-left: 40px solid $black-cl;
+    border-right: 40px solid transparent;
+    top: 50%;
+    position: absolute;
+    cursor: pointer;
+    &.next {
+      border-left: 40px solid transparent;
+      border-right: 40px solid $black-cl;
+      right: 0;
+    }
+  }
+  .btn-arrow {
+    top: 54%;
+    left: 0.5%;
+    position: absolute;
+    z-index: 20;
+    &.next {
+      transform: rotate(180deg);
+      right: 0.5%;
+    }
+  }
+  @include sm {
+    height: 90px;
+    .slider-btn {
+      display: none;
+    }
+    .btn-arrow {
+      display: none;
+    }
+  }
+}
+.intro {
+  padding: 100px 0;
+  background-color: $black-cl;
+  &__wrap {
+    display: flex;
+    gap: 24px;
+    &-item {
+      max-width: 282px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .textbox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 0;
+        .heading__text {
+          @include text(2.4rem, ol, 40px, $white-cl, normal);
+          padding-bottom: 8px;
+        }
+        .desc__text {
+          @include text(1.6rem, mr, 30px, $white-cl, normal);
+          text-align: center;
+        }
+      }
+      .discover {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        &__text {
+          @include text(1.4rem, od, 20px, $secondary, normal);
+        }
+      }
+    }
+  }
+  @include xs {
+    .intro__wrap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+.between {
+  background: $black-light;
+  padding-top: 120px;
+  padding-bottom: 200px;
+  .container {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: start;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 548px;
+    gap: 24px;
+    .between__img {
+      grid-column: 1/7;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+    .between__text {
+      grid-column: 8/13;
+      .textbox {
+        .icon__quad {
+          &::before {
+            display: none;
+          }
+        }
+      }
+      .desc {
+        @include text(1.6rem, mr, 30px, $white-cl, normal);
+        margin-top: 24px;
+        margin-bottom: 8px;
+      }
+      .bottom {
+        @include text(2.4rem, ci, 40px, $white-cl, normal);
+        margin-bottom: 64px;
+      }
+    }
+  }
+  @include sm {
+    padding-bottom: 120px;
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+.offers {
+  background: $black-cl;
+  display: flex;
+  .textbox {
+    padding-top: 64px;
+  }
+  .offers__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 48px 0 0;
+    .right {
+      display: grid;
+      grid-template-rows: repeat(5, 70px);
+      grid-row-gap: 24px;
+    }
+    .left {
+      display: grid;
+      grid-template-rows: repeat(5, 70px);
+      grid-row-gap: 24px;
+    }
+    &-item {
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .heading {
+          @include text(2.4rem, ol, 40px, $white-cl, normal);
+          @include sm {
+            font-size: 2rem;
+          }
+          @include xs {
+            font-size: 0.8rem;
+          }
+        }
+        .prices {
+          @include text(2.4rem, ol, 40px, $secondary, normal);
+          flex: 1;
+          display: flex;
+          align-items: center;
+          &::before {
+            content: "";
+            height: 1px;
+            display: block;
+            background: $secondary;
+            flex: 1;
+          }
+          @include sm {
+            font-size: 2rem;
+          }
+          @include xs {
+            font-size: 1rem;
+          }
+        }
+      }
+      .bottom {
+        @include text(1.4rem, mr, 30px, $white-cl, normal);
+        @include xs {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+  .btn-primary {
+    @include margin;
+  }
+  @include xs {
+    .offers__wrap .right {
+      grid-template-rows: repeat(5, 50px);
+    }
+    .offers__wrap .left {
+      grid-template-rows: repeat(5, 50px);
+    }
+  }
+}
+.video {
+  position: relative;
+  background-image: url(/img/video.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 30%;
+  @include sm {
+    padding-bottom: 78%;
+  }
+  &__play {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid $white-cl;
+    @include mid;
+    &-icon {
+      @include mid;
+    }
+  }
+}
+.events {
+  background: $black-light;
+  padding-top: 120px;
+  &__brand {
+    padding: 120px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    &-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  @include xs {
+  }
+}
+.be {
+  display: flex;
+  background-color: #040404;
+  overflow: hidden;
+  &__img {
+    margin-left: auto;
+    object-fit: cover;
+  }
+  .out {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    padding-left: clamp(
+      15px,
+      calc((100vw - var(--container-width)) / 2 + 15px),
+      990000px
+    );
+    &__item {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+  &__text {
+    display: flex;
+    align-items: center;
+    .textbox {
+      position: relative;
+    }
+    .icon__text {
+      position: absolute;
+      right: -11.8%;
+    }
+  }
+  &__desc {
+    @include text(2.4rem, ci, 40px, $white-cl, normal);
+    padding: 42px 0 24px;
+  }
+  &__clients {
+    padding-bottom: 14px;
+    .top {
+      @include text(2.4rem, ol, 40px, $white-cl, normal);
+    }
+    .bottom {
+      @include text(1.4rem, mr, 30px, $secondary, normal);
+    }
+  }
+  &__arrow {
+    display: flex;
+    gap: 16px;
+    cursor: pointer;
+    &-next {
+      transform: rotate(180deg);
+    }
+  }
+  @include sm {
+    flex-direction: column;
+  }
+}
+.gallery {
+  padding: 120px 0;
+  background: $black-light;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+  &__item {
+    &-textbox {
+      padding: 24px 10px 0 10px;
+      text-align: center;
+      .heading {
+        a {
+          @include text(2.4rem, ol, 40px, $white-cl, normal);
+        }
+      }
+      .info {
+        @include text(1.4rem, mr, 30px, $secondary, normal);
+      }
+    }
+  }
+  &__item:nth-child(even) {
+    padding-top: 60px;
+  }
+  @include sm {
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__item:nth-child(even) {
+      padding-top: 0;
+    }
+  }
+  @include xs {
+    padding: 90px 0;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__item {
+      .heading {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+.facts {
+  background: $black-light;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+  &__enhan {
+    grid-column: 8/13;
+
+    &-desc {
+      padding: 24px 0 48px;
+      @include text(1.6rem, mr, 30px, $white-cl, normal);
+    }
+    &-number {
+      display: flex;
+      gap: 97px;
+      @include md {
+        gap: 70px;
+      }
+    }
+  }
+  @include sm {
+    .container {
+      display: flex;
+      flex-direction: column;
+      .reserve-img,
+      .make__reserve-column {
+        display: none;
+      }
+    }
+  }
+}
+.blog {
+  padding: 120px 0;
+  background: $black-light;
+  position: relative;
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .btn-primary {
+    @include margin;
+  }
+  @include keyframes(logo) {
+    0% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+  .circle {
+    position: absolute;
+    right: -0.6%;
+    top: 27.8%;
+    @include animation(logo 3s linear infinite);
+    @include xs {
+      top: 15.8%;
+      right: -6.6%;
+    }
+  }
+}
+.popupvideo {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+  @include transition($t);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__inner {
+    width: 80%;
+    height: 80%;
+    max-width: 1200px;
+    @include mid;
+    &-iframe {
+      width: 100%;
+      height: 0;
+      border: 5px solid #fff;
+      padding-bottom: 55%;
+      @include mid;
+      iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-close {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #bea67c;
+      cursor: pointer;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: -15px;
+      right: -15px;
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    @include xs {
+      width: calc(100%-20px);
+      height: calc(100%-20px);
+    }
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

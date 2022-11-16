@@ -1,0 +1,57 @@
+.scroll {
+  padding: 100px 0 120px;
+  background: $black-light;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery-wrap {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+    padding: 30px 0 80px;
+    &.active {
+      display: grid;
+    }
+  }
+  &__tab {
+    display: flex;
+    gap: 24px;
+    &-item {
+      @include text(1.4rem, ol, 30px, #909090, uppercase);
+      @include transition($t);
+      position: relative;
+      &.active {
+        color: $white-cl;
+        @include transition($t);
+        &::after {
+          opacity: 1;
+        }
+      }
+      &::after {
+        content: "";
+        opacity: 0;
+        width: 100%;
+        height: 3px;
+        background: $secondary;
+        display: block;
+        position: absolute;
+        bottom: -2px;
+      }
+    }
+  }
+  .tab-dots {
+    width: 100%;
+    height: 1px;
+    background: $secondary;
+  }
+  @include xxs {
+    padding: 60px 0 80px;
+    &__tab {
+      &-item {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
