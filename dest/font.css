@@ -1,7 +1,7 @@
 @font-face {
   font-family: "od";
-  src: url("/fonts/Oswald-Regular.woff2") format("woff2"),
-    url("/fonts/Oswald-Regular.woff") format("woff");
+  src: url("../fonts/Oswald-Regular.woff2") format("woff2"),
+    url("../fonts/Oswald-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
   font-family: "ol";
-  src: url("/fonts/Oswald-Light.woff2") format("woff2"),
-    url("/fonts/Oswald-Light.woff") format("woff");
+  src: url("../fonts/Oswald-Light.woff2") format("woff2"),
+    url("../fonts/Oswald-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face {
   font-family: "mr";
-  src: url("/fonts/Montserrat-Regular.woff2") format("woff2"),
-    url("/fonts/Montserrat-Regular.woff") format("woff");
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -27,8 +27,8 @@
 
 @font-face {
   font-family: "c6";
-  src: url("/fonts/Cormorant-SemiBoldItalic.woff2") format("woff2"),
-    url("/fonts/Cormorant-SemiBoldItalic.woff") format("woff");
+  src: url("../fonts/Cormorant-SemiBoldItalic.woff2") format("woff2"),
+    url("../fonts/Cormorant-SemiBoldItalic.woff") format("woff");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -36,8 +36,8 @@
 
 @font-face {
   font-family: "ci";
-  src: url("/fonts/Cormorant-LightItalic.woff2") format("woff2"),
-    url("/fonts/Cormorant-LightItalic.woff") format("woff");
+  src: url("../fonts/Cormorant-LightItalic.woff2") format("woff2"),
+    url("../fonts/Cormorant-LightItalic.woff") format("woff");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
