@@ -1,0 +1,3 @@
+# Sunset
+npm install
+grunt
